@@ -1,0 +1,31 @@
+body {
+    background-color: #f9f9f9;
+}
+
+.increase-font {
+    font-size: 1.3em;
+}
+
+.todo-item:hover {
+    cursor: pointer;
+}
+
+.todo-item:hover {
+    background-color: #f5f5f5;
+}
+
+.todo-item .delete {
+    cursor: pointer;
+}
+
+.todo-item .delete:hover {
+    color: var(--danger);
+}
+
+.todo-item.completed .card-title {
+    text-decoration: line-through !important;
+}
+
+.todo-item.completed .card-title a{
+    color: #6c757d ;
+}
