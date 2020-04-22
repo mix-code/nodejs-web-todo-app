@@ -27,10 +27,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // PORT Init
 const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {    
+app.get('/', async (req, res) => {
+    
+    // Get Todos Data
+    let todos = await Todo.find();
+
+    // Send Todos Data To Index View
     res.render('index', {
         pageTitle: 'Todos',
-        route: req.path,
+        todos,
     });
 });
 
@@ -40,9 +45,13 @@ app.get('/create', (req, res) => {
     });
 });
 
-app.get('/show', (req, res) => {
+app.get('/show/:id', async (req, res) => {
+    
+    const todo = await Todo.findById(req.params.id);
+
     res.render('show', {
-        pageTitle: 'Show Todo'
+        pageTitle: 'Show Todo',
+        todo,
     });
 });
 
