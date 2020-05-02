@@ -17,5 +17,10 @@ $(document).ready(function () {
     $('.mark-todo-as-un-completed').on('click', function () {
         $('.todo-item').removeClass('completed');
     })
-    
-})
+
+    $('.deleteBtn').on('click', function (event) {
+        if (! confirm('Are Your Sure')) {
+            event.preventDefault();
+        }
+    });  
+});

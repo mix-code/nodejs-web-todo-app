@@ -12,9 +12,13 @@
                             <a href="/show/{{this._id}}" class="text-decoration-none">{{this.title}}</a>
                         </div>
                     </div>
-                    <button class="btn btn-outline-danger">
-                        <i class="fas fa-trash"></i>
-                    </button>
+                    
+                    <form action="/remove/{{this._id}}" method="post">
+                        <button type="submit" class="btn btn-outline-danger deleteBtn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
+                    
                 </div>
             </div>
         </div>
